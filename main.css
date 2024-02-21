@@ -613,3 +613,34 @@ footer section:last-of-type {
     }
 
 }
+
+@media print {
+    @page {
+        margin: 0.5in;
+    }
+
+    img {
+        filter: grayscale(100%);
+    }
+
+    nav {
+        display: none;
+    }
+
+    body {
+        overflow: hidden;
+        font-family: serif;
+    }
+
+    a[href] {
+        content: '';
+    }
+
+    a[href]:after {
+        content: attr(href);
+    }
+
+    body {
+        page-break-after: always;
+    }
+}
